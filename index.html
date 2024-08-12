@@ -1,0 +1,202 @@
+<!-- 
+  Hello 😊.
+
+  This template is designed and developed by Nisar Hassan Naqvi
+  for anyone to use for free or customize the way they like.
+
+  Github Repo: https://github.com/nisarhassan12/portfolio-template/
+  My Website: https://nisar.dev
+
+  For business & inquires, contact me => syednisarhassan12@gmail.com
+-->
+
+<!--
+  Follow the instructions written in comments to create your stunning portfolio
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+
+    <!-- Put your site title here -->
+    <title>
+        Senoj Harshana | Graphic Designer and Illustrator
+    </title>
+
+    <meta name="description" content="Add small description of yourslef.">
+    <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+    <meta name="keywords" content="Senoj Harshana. Adobe Photoshop, Adobe Illustrator"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body>
+
+<!-- ***** Header ***** -->
+
+<header class="header" role="banner" id="top">
+    <div class="row">
+        <nav class="nav" role="navigation">
+            <ul class="nav__items">
+                <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header__text-box row">
+        <div class="header__text">
+            <h1 class="heading-primary">
+                <span>Senoj Harshana</span>
+            </h1>
+            <p>Graphic Designer and Illustrator</p>
+            <a href="#contact" class="btn btn--pink">Get in touch</a>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+        <div class="row">
+            <h2>My Work</h2>
+            <div class="work__boxes">
+
+                <!-- Each div with the work__box class is a project. -->
+
+                <div class="work__box">
+                    <div class="work__text">
+                        <h3 style="padding-bottom: 150px;">Bold Branding: Advertisements That Stand Out</h3>
+                        <p class="link__text">
+                            Dive into this collection of advertisement posts and banners, meticulously crafted using
+                            Adobe Photoshop CC. Each design is tailored to capture attention and convey the essence of
+                            the brand in a visually compelling way.
+                        </p>
+                    </div>
+
+                    <div class="work__image-box">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./images/Vegebox banner.png" alt="Ad 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/Find Your Dream.png" alt="Ad 2">
+                                </div>
+                            </div>
+                            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+                            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <div id="imageModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImage">
+                    </div>
+                </div>
+
+                <div class="work__box">
+                    <div class="work__text">
+                        <h3>Playful Pixels: Expressive Cartoon Illustrations</h3>
+                        <p class="link__text">
+                            Discover a collection of charming cartoon illustrations, created using Adobe Illustrator.
+                            These designs feature expressive characters and dynamic scenes, showcasing the versatility
+                            and creativity possible with digital art tools to bring vivid narratives to your screen.
+                        </p>
+
+                    </div>
+                    <div class="work__image-box">
+                        <img src="./images/sample illustration.jpeg" class="work__image" alt="Cartoon 1"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+        <div class="row">
+            <h2>About Me</h2>
+            <div class="about__content">
+                <div class="about__text">
+                    <p class="justified">
+                        With a comprehensive background from a Computer Graphic Designing NVQ Level 4 course and
+                        advanced Adobe Photoshop training at Mastor.lk, I offer a strong blend of technical proficiency
+                        and creative innovation. My passion for design drives me to deliver visually striking solutions
+                        that effectively communicate and captivate. I’m eager to contribute my skills and creativity to
+                        a dynamic team and help bring impactful design visions to life.
+                    </p>
+                    <!-- Provide a link to your resume -->
+<!--                    <a href="#" class="btn">My Resume</a>-->
+                </div>
+
+                <div class="about__photo-container">
+                    <img class="about__photo" src="./images/syed-ali-hussnain.jpg" alt=""/>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ***** Contact ***** -->
+
+<section class="contact" id="contact">
+    <div class="row">
+        <h2>Get in Touch</h2>
+        <div class="contact__info">
+            <p>
+                If you’re pleased with my work and interested in collaborating on graphic design tasks or projects, I’d
+                love to hear from you! Feel free to contact me via email or phone (SMS/WhatsApp) to discuss how we can
+                work together.
+            </p>
+            <a href="mailto:senojharshana@gmail.com" class="btn">senojharshana@gmail.com</a>
+            <p class="btn">+94 787 332 739</p>
+        </div>
+    </div>
+</section>
+
+<!-- ***** Footer ***** -->
+
+<footer role="contentinfo" class="footer">
+    <div class="row">
+        <!-- Update the links to point to your accounts -->
+        <ul class="footer__social-links">
+            <li class="footer__social-link-item">
+                <a href="https://www.linkedin.com/in/senoj-harshana-b2092519/" target="_blank"
+                   title="Link to Linkedin Profile">
+                    <img src="./images/linkedin.svg" class="footer__social-image"
+                         alt="Linkedin">
+                </a>
+            </li>
+            <li class="footer__social-link-item">
+                <a href="https://www.instagram.com/senojharshana/?igsh=MXU3M25zZTVicTgwOQ%3D%3D" target="_blank"
+                   title="Link to Instagram Profile">
+                    <img src="./images/instagram.png" class="footer__social-image" alt="Instagram">
+                </a>
+            </li>
+        </ul>
+
+        <p>
+            &copy; 2024 - Template adopted from Nisar</a>.
+        </p>
+    </div>
+</footer>
+
+<a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+</a>
+<script src="./index.js"></script>
+</body>
+
+</html>
