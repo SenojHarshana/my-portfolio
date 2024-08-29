@@ -42,74 +42,75 @@ window.addEventListener("scroll", () => {
   }
 });
 
-let currentSlide = 0;
+// ###################
 
-function showSlide(index) {
-  const slides = document.querySelectorAll('.carousel-item');
+// Function to initialize the carousel functionality for each work__box
+function initializeCarousel(workBox) {
+  let currentSlide = 0;
+  const slides = workBox.querySelectorAll('.carousel-item');
   const totalSlides = slides.length;
 
-  // Remove the 'active' class from all slides
-  slides.forEach((slide) => slide.classList.remove('active'));
+  function showSlide(index) {
+      // Remove the 'active' class from all slides
+      slides.forEach((slide) => slide.classList.remove('active'));
 
-  // Update the currentSlide index
-  if (index >= totalSlides) {
-    currentSlide = 0;
-  } else if (index < 0) {
-    currentSlide = totalSlides - 1;
-  } else {
-    currentSlide = index;
+      // Update the currentSlide index
+      if (index >= totalSlides) {
+          currentSlide = 0;
+      } else if (index < 0) {
+          currentSlide = totalSlides - 1;
+      } else {
+          currentSlide = index;
+      }
+
+      // Add the 'active' class to the current slide
+      slides[currentSlide].classList.add('active');
+
+      // Adjust the transform based on the active slide
+      const offset = -currentSlide * 100;
+      workBox.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
   }
 
-  // Add the 'active' class to the current slide
-  slides[currentSlide].classList.add('active');
+  function nextSlide() {
+      showSlide(currentSlide + 1);
+  }
 
-  // Adjust the transform based on the active slide
-  const offset = -currentSlide * 100;
-  document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
-}
+  function prevSlide() {
+      showSlide(currentSlide - 1);
+  }
 
-function nextSlide() {
-  showSlide(currentSlide + 1);
-}
+  // Attach event listeners for the controls
+  workBox.querySelector('.next').addEventListener('click', nextSlide);
+  workBox.querySelector('.prev').addEventListener('click', prevSlide);
 
-function prevSlide() {
-  showSlide(currentSlide - 1);
-}
+  // Initialize the first slide as active
+  showSlide(currentSlide);
 
-// Initialize the first slide as active
-showSlide(currentSlide);
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const captionText = document.getElementById('caption');
 
-
-// ##### Modal #####
-
-// Get the modal
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImage');
-const captionText = document.getElementById('caption');
-
-// Get all images in the carousel
-const carouselImages = document.querySelectorAll('.carousel-item img');
-
-// When an image is clicked, open the modal
-carouselImages.forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'flex'; // Use flex to show the modal
-    modalImg.src = img.src;
-    captionText.innerHTML = img.alt;
+  const carouselImages = workBox.querySelectorAll('.carousel-item img');
+  carouselImages.forEach(img => {
+      img.addEventListener('click', () => {
+          modal.style.display = 'flex';
+          modalImg.src = img.src;
+          captionText.innerHTML = img.alt;
+      });
   });
-});
 
-// Get the <span> element that closes the modal
-const closeBtn = document.getElementsByClassName('close')[0];
+  const closeBtn = document.getElementsByClassName('close')[0];
+  closeBtn.onclick = function () {
+      modal.style.display = 'none';
+  };
 
-// When the user clicks on <span> (x), close the modal
-closeBtn.onclick = function() {
-  modal.style.display = 'none';
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = 'none';
+      }
+  };
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}
+// Initialize all carousels on the page
+document.querySelectorAll('.work__box').forEach(initializeCarousel);
